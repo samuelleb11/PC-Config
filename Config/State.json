@@ -1,0 +1,185 @@
+{
+    "packages": {
+            "googlechrome": [
+                {"provider": "chocolatey"},
+                {"packageName": "googlechrome"}
+            ],
+            "github-desktop": [
+                {"provider": "chocolatey"},
+                {"packageName": "github-desktop"}
+            ],
+            "nextcloud": [
+                {"provider": "chocolatey"},
+                {"packageName": "nextcloud-client"}
+            ],
+            "s3browser": [
+                {"provider": "chocolatey"},
+                {"packageName": "s3browser"}
+            ],
+            "veracrypt": [
+                {"provider": "chocolatey"},
+                {"packageName": "veracrypt"}
+            ],
+            "fraps": [
+                {"provider": "chocolatey"},
+                {"packageName": "fraps"}
+            ],
+            "musicbee": [
+                {"provider": "chocolatey"},
+                {"packageName": "musicbee"}
+            ],
+            "veeam": [
+                {"provider": "chocolatey"},
+                {"packageName": "veeam-agent"}
+            ],
+            "mp3tag": [
+                {"provider": "chocolatey"},
+                {"packageName": "mp3tag"}
+            ],
+            "insomnia-rest-api-client": [
+                {"provider": "chocolatey"},
+                {"packageName": "insomnia-rest-api-client"}
+            ],
+            "7zip": [
+                {"provider": "chocolatey"},
+                {"packageName": "7zip"}
+            ],
+            "steam-client": [
+                {"provider": "chocolatey"},
+                {"packageName": "steam-client"}
+            ],
+            "vscode": [
+                {"provider": "chocolatey"},
+                {"packageName": "vscode"}
+            ],
+            "firefox": [
+                {"provider": "chocolatey"},
+                {"packageName": "firefox"}
+            ],
+            "putty": [
+                {"provider": "chocolatey"},
+                {"packageName": "putty"}
+            ],
+            "winscp": [
+                {"provider": "chocolatey"},
+                {"packageName": "winscp"}
+            ],
+            "spotify": [
+                {"provider": "chocolatey"},
+                {"packageName": "spotify"}
+            ],
+            "filezilla": [
+                {"provider": "chocolatey"},
+                {"packageName": "filezilla"}
+            ],
+            "gimp": [
+                {"provider": "chocolatey"},
+                {"packageName": "gimp"}
+            ],
+            "audacity": [
+                {"provider": "chocolatey"},
+                {"packageName": "audacity"}
+            ],
+            "notepadplusplus": [
+                {"provider": "chocolatey"},
+                {"packageName": "notepadplusplus.install"}
+            ],
+            "foobar2000": [
+                {"provider": "chocolatey"},
+                {"packageName": "foobar2000"}
+            ],
+            "vlc": [
+                {"provider": "chocolatey"},
+                {"packageName": "vlc"}
+            ],
+            "bitwarden": [
+                {"provider": "chocolatey"},
+                {"packageName": "bitwarden"}
+            ],
+            "qbittorrent": [
+                {"provider": "chocolatey"},
+                {"packageName": "qbittorrent"}
+            ],
+            "greenshot": [
+                {"provider": "chocolatey"},
+                {"packageName": "greenshot"}
+            ],
+            "windirstat": [
+                {"provider": "chocolatey"},
+                {"packageName": "windirstat"}
+            ],
+            "discord": [
+                {"provider": "chocolatey"},
+                {"packageName": "discord"}
+            ],
+            "logitech-options": [
+                {"provider": "chocolatey"},
+                {"packageName": "logitech-options"}
+            ],
+            "obs-studio": [
+                {"provider": "chocolatey"},
+                {"packageName": "obs-studio"}
+            ],
+            "libreoffice": [
+                {"provider": "chocolatey"},
+                {"packageName": "libreoffice-fresh"}
+            ],
+            "nodejs": [
+                {"provider": "chocolatey"},
+                {"packageName": "nodejs"}
+            ],
+            "java": [
+                {"provider": "chocolatey"},
+                {"packageName": "javaruntime"}
+            ],
+            "python3": [
+                {"provider": "chocolatey"},
+                {"packageName": "python3"}
+            ],
+            "voicemeeter": [
+                {"provider": "chocolatey"},
+                {"packageName": "voicemeeter-potato"}
+            ],
+            "logitech-camera-settings": [
+                {"provider": "chocolatey"},
+                {"packageName": "logitech-camera-settings"}
+            ],
+            "private-internet-access": [
+                {"provider": "chocolatey"},
+                {"packageName": "pia"}
+            ],
+            "krisp": [
+                {"provider": "msi"},
+                {"packageName": "krisp"},
+                {"url": "https://download.krisp.ai/win"}
+            ]
+    },
+    "defaults": {
+        "DefaultBrowser": "chrome" 
+    },
+    "WindowsExplorer": {
+        "FolderOptions": [
+            {"ShowHiddenFiles": "true"},
+            {"ShowExtensions": "true"},
+            {"ShowSystemFiles": "true"}
+        ],
+        "Taskbar": [
+            {"SmallIcons": "true"},
+            {"AlwaysCombine": "false"},
+            {"ShowCortanaButton": "false"},
+            {"ShowTaskViewButton": "false"},
+            {"ShowPeopleBand": "false"},
+            {"ShowSearch": "false"},
+            {"ShowKeyboardButton": "false"}
+        ],
+        "Desktop": [
+            {"Wallpaper": "https://unsplash.com/photos/L_b17zx5H-c/download?force=true"},
+            {"WallpaperSource": "url"},
+            {"WallpaperFit": "Fill"},
+            {"WallpaperCleanup": "true"}
+        ]
+    },
+    "Power": {
+        "PowerProfile": "Performance"
+    }
+}

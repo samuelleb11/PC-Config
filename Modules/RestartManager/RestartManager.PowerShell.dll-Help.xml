@@ -1,0 +1,703 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-RestartManagerProcess</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>RestartManagerProcess</command:noun>
+      <maml:description>
+        <maml:para>Gets information about processes using any previously registered resource.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Gets information about processes using any previous registered resource for the active session in $RestartManagerSession or passed to -Session.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-RestartManagerProcess</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Session</maml:name>
+          <maml:Description>
+            <maml:para>The Restart Manager session to use. If not specified, the $RestartManagerSession variable is used.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">RestartManagerSession</command:parameterValue>
+          <dev:type>
+            <maml:name>RestartManagerSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Session</maml:name>
+        <maml:Description>
+          <maml:para>The Restart Manager session to use. If not specified, the $RestartManagerSession variable is used.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">RestartManagerSession</command:parameterValue>
+        <dev:type>
+          <maml:name>RestartManagerSession</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>RestartManager.ProcessInfo</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Get-RestartManagerProcess</dev:code>
+        <dev:remarks>
+          <maml:para>Gets information about processes using any previously registered resource.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/heaths/RestartManager/wiki/Get-RestartManagerProcess</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Register-RestartManagerResource</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>RmGetList</maml:linkText>
+        <maml:uri>https://msdn.microsoft.com/library/windows/desktop/aa373661.aspx</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Register-RestartManagerResource</command:name>
+      <command:verb>Register</command:verb>
+      <command:noun>RestartManagerResource</command:noun>
+      <maml:description>
+        <maml:para>Registers one or more file, process, or service with the Restart Manager.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Registers one or more file, process, or service with the active Restart Manager session in $RestartManagerSession or passed to -Session. You should minimize the number of times you call this cmdlet by passing as many resources - even a mix of file, process, or service objects - as possible to a single invocation. Piping objects to this cmdlet will batch them for a single call at the end of the pipeline.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Register-RestartManagerResource</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath">
+          <maml:name>LiteralPath</maml:name>
+          <maml:Description>
+            <maml:para>The path to a file or files to register with the Restart Manager. Wildcards are not supported.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>Process</maml:name>
+          <maml:Description>
+            <maml:para>One or more process to register with the Restart Manager.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Process[]</command:parameterValue>
+          <dev:type>
+            <maml:name>Process[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>ServiceName</maml:name>
+          <maml:Description>
+            <maml:para>One or more service name to register with the Restart Manager.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Session</maml:name>
+          <maml:Description>
+            <maml:para>The Restart Manager session to use. If not specified, the $RestartManagerSession variable is used.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">RestartManagerSession</command:parameterValue>
+          <dev:type>
+            <maml:name>RestartManagerSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Register-RestartManagerResource</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Path</maml:name>
+          <maml:Description>
+            <maml:para>The path to a file or files to register with the Restart Manager. Wildcards are supported.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>Process</maml:name>
+          <maml:Description>
+            <maml:para>One or more process to register with the Restart Manager.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Process[]</command:parameterValue>
+          <dev:type>
+            <maml:name>Process[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>ServiceName</maml:name>
+          <maml:Description>
+            <maml:para>One or more service name to register with the Restart Manager.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Session</maml:name>
+          <maml:Description>
+            <maml:para>The Restart Manager session to use. If not specified, the $RestartManagerSession variable is used.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">RestartManagerSession</command:parameterValue>
+          <dev:type>
+            <maml:name>RestartManagerSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath">
+        <maml:name>LiteralPath</maml:name>
+        <maml:Description>
+          <maml:para>The path to a file or files to register with the Restart Manager. Wildcards are not supported.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Path</maml:name>
+        <maml:Description>
+          <maml:para>The path to a file or files to register with the Restart Manager. Wildcards are supported.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>Process</maml:name>
+        <maml:Description>
+          <maml:para>One or more process to register with the Restart Manager.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Process[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Process[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>ServiceName</maml:name>
+        <maml:Description>
+          <maml:para>One or more service name to register with the Restart Manager.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Session</maml:name>
+        <maml:Description>
+          <maml:para>The Restart Manager session to use. If not specified, the $RestartManagerSession variable is used.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">RestartManagerSession</command:parameterValue>
+        <dev:type>
+          <maml:name>RestartManagerSession</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Diagnostics.Process[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; dir .\MyApp -filter *.dll -recurse | Register-RestartManagerResource</dev:code>
+        <dev:remarks>
+          <maml:para>Registers all DLLs under the .\MyApp folder with the active Restart Manager session in $RestartManagerSession.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Get-Process devenv | Register-RestartManagerResource</dev:code>
+        <dev:remarks>
+          <maml:para>Registers any and all processes named 'devenv' with the active Restart Manager session in $RestartManagerSession.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 3 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Get-Service MyService | Register-RestartManagerResource</dev:code>
+        <dev:remarks>
+          <maml:para>Registers the service 'MyService' with the active Restart Manager session in $RestartManagerSession.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/heaths/RestartManager/wiki/Register-RestartManagerResource</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-RestartManagerProcess</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>RmRegisterResource</maml:linkText>
+        <maml:uri>https://msdn.microsoft.com/library/windows/desktop/aa373663.aspx</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Restart-RestartManagerProcess</command:name>
+      <command:verb>Restart</command:verb>
+      <command:noun>RestartManagerProcess</command:noun>
+      <maml:description>
+        <maml:para>Attempts to restart any processes previously shut down by the Restart Manager.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Attempts to restart any processes previously shut down by the Restart Manager for the active session in $RestartManagerSession or passed to -Session. No all processes may restart.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Restart-RestartManagerProcess</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Session</maml:name>
+          <maml:Description>
+            <maml:para>The Restart Manager session to use. If not specified, the $RestartManagerSession variable is used.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">RestartManagerSession</command:parameterValue>
+          <dev:type>
+            <maml:name>RestartManagerSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Session</maml:name>
+        <maml:Description>
+          <maml:para>The Restart Manager session to use. If not specified, the $RestartManagerSession variable is used.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">RestartManagerSession</command:parameterValue>
+        <dev:type>
+          <maml:name>RestartManagerSession</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Restart-RestartManagerProcess</dev:code>
+        <dev:remarks>
+          <maml:para>Attempts to restart any processes previously shut down by the Restart Manager.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/heaths/RestartManager/wiki/Restart-RestartManagerProcess</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-RestartManagerProcess</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Stop-RestartManagerProcess</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>RmRestart</maml:linkText>
+        <maml:uri>https://msdn.microsoft.com/library/windows/desktop/aa373665.aspx</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>RegisterApplicationRestart</maml:linkText>
+        <maml:uri>https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Start-RestartManagerSession</command:name>
+      <command:verb>Start</command:verb>
+      <command:noun>RestartManagerSession</command:noun>
+      <maml:description>
+        <maml:para>Starts a new Restart Manager session.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Starts a new Restart Manager session and sets the $RestartManagerSession variable so you do not need to pass the session to each subsequent cmdlet. If there is already a session active this cmdlet will fail unless you pass -Force, in which case the active session is disposed and a new one created in its place.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Start-RestartManagerSession</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Force</maml:name>
+          <maml:Description>
+            <maml:para>Creates a new session in $RestartManagerSession even if one is already active. The existing session is disposed.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:Description>
+            <maml:para>Writes the Restart Manager session to the pipeline.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Force</maml:name>
+        <maml:Description>
+          <maml:para>Creates a new session in $RestartManagerSession even if one is already active. The existing session is disposed.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
+        <maml:Description>
+          <maml:para>Writes the Restart Manager session to the pipeline.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>RestartManager.RestartManagerSession</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Start-RestartManagerSession</dev:code>
+        <dev:remarks>
+          <maml:para>Starts a new Restart Manager session.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/heaths/RestartManager/wiki/Start-RestartManagerSession</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Stop-RestartManagerSession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>RmStartSession</maml:linkText>
+        <maml:uri>https://msdn.microsoft.com/library/windows/desktop/aa373668.aspx</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Stop-RestartManagerProcess</command:name>
+      <command:verb>Stop</command:verb>
+      <command:noun>RestartManagerProcess</command:noun>
+      <maml:description>
+        <maml:para>Stops processes using any previously registered resources.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Stops processes using any previously registered resources for the active session in $RestartManagerSession or passed to -Session. You can forcibly stop processes after a system-defined timeout by passing the -Force switch.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Stop-RestartManagerProcess</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Force</maml:name>
+          <maml:Description>
+            <maml:para>Forcibly stop processes using any previously registered resources if they do not shut down before a system-defined timeout.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>OnlyRegistered</maml:name>
+          <maml:Description>
+            <maml:para>Only shut down processes that have registered with the Restart Manager using RegisterApplicationRestart.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Session</maml:name>
+          <maml:Description>
+            <maml:para>The Restart Manager session to use. If not specified, the $RestartManagerSession variable is used.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">RestartManagerSession</command:parameterValue>
+          <dev:type>
+            <maml:name>RestartManagerSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Force</maml:name>
+        <maml:Description>
+          <maml:para>Forcibly stop processes using any previously registered resources if they do not shut down before a system-defined timeout.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>OnlyRegistered</maml:name>
+        <maml:Description>
+          <maml:para>Only shut down processes that have registered with the Restart Manager using RegisterApplicationRestart.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Session</maml:name>
+        <maml:Description>
+          <maml:para>The Restart Manager session to use. If not specified, the $RestartManagerSession variable is used.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">RestartManagerSession</command:parameterValue>
+        <dev:type>
+          <maml:name>RestartManagerSession</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Stop-RestartManagerProcess -Force</dev:code>
+        <dev:remarks>
+          <maml:para>Forcibly stops processes using any previously registered resources after a system-defined timeout if they don't successfully shut down.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/heaths/RestartManager/wiki/Stop-RestartManagerProcess</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Get-RestartManagerProcess</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Restart-RestartManagerProcess</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>RmShutdown</maml:linkText>
+        <maml:uri>https://msdn.microsoft.com/library/windows/desktop/aa373667.aspx</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>RegisterApplicationRestart</maml:linkText>
+        <maml:uri>https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Stop-RestartManagerSession</command:name>
+      <command:verb>Stop</command:verb>
+      <command:noun>RestartManagerSession</command:noun>
+      <maml:description>
+        <maml:para>Stops the active Restart Manager Session.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Stops the active Restart Manager session in $RestartManagerSession or that is passed to -Session. Will not err if no session is active or the session has already been disposed.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Stop-RestartManagerSession</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Session</maml:name>
+          <maml:Description>
+            <maml:para>The Restart Manager session to use. If not specified, the $RestartManagerSession variable is used.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">RestartManagerSession</command:parameterValue>
+          <dev:type>
+            <maml:name>RestartManagerSession</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Session</maml:name>
+        <maml:Description>
+          <maml:para>The Restart Manager session to use. If not specified, the $RestartManagerSession variable is used.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">RestartManagerSession</command:parameterValue>
+        <dev:type>
+          <maml:name>RestartManagerSession</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Stop-RestartManagerSession</dev:code>
+        <dev:remarks>
+          <maml:para>Stops the active Restart Manager session.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/heaths/RestartManager/wiki/Stop-RestartManagerSession</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Start-RestartManagerSession</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>RmEndSession</maml:linkText>
+        <maml:uri>https://msdn.microsoft.com/library/windows/desktop/aa373659.aspx</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>
