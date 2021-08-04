@@ -30,3 +30,5 @@ For now the main documentation is to look at the Config\State.json file which ha
 #### Other notes
 You could in theory use the modules provided to build you own PowerShell script(s).
 Thanks to Heath Stewart, the Windows Explorer restart function is provided here https://github.com/heaths/RestartManager
+
+To help finding Chocolatey packages that you would like to install you can go to https://community.chocolatey.org/packages
