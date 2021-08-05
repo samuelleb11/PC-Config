@@ -7,7 +7,7 @@ For now the main documentation is to look at the Config\State.json file which ha
 #### Requirements
 - Windows 10 (As this is the only one I have tested)
 - PowerShell 7+ (Automatic installation is supported)
-- Admin privileges (Automatic elevation not yet supported)
+- Admin privileges (Automatic elevation is supported)
 - Basic JSON knowledge
 - Chocolatey if you specify any package with the chocolatey provider (Automatic installation of Chocolatey is supported)
 
