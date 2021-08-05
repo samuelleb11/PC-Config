@@ -12,6 +12,7 @@ For now the main documentation is to look at the Config\State.json file which ha
 - Chocolatey if you specify any package with the chocolatey provider (Automatic installation of Chocolatey is supported)
 
 #### How to use
+- Copy State.json.exemple to State.json
 - Edit the State.json file with what you need
 - Execute Go.ps1 in a PowerShell shell
 
