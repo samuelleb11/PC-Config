@@ -14,18 +14,21 @@ Import-Module -Name $(Join-Path -Path $(Join-Path -Path $PSScriptRoot -ChildPath
 Write-Host -ForegroundColor Black -BackgroundColor Green "Initialising..."
 
 if (!$(Test-ElevatedPermission)) {
-    throw "Not running in an elevated process !"
+    Start-Process -FilePath PowerShell.exe -Verb Runas -ArgumentList " -File $SourcePath"
+    $Global:Live = $false
     exit
 }
 if ($host.Version.Major -lt 7){
     if (Test-Path $(Join-Path -Path $(Join-Path -Path $(Join-Path -Path $env:ProgramFiles -ChildPath "Powershell") -ChildPath "7") -ChildPath "pwsh.exe")){
-        Start-Process -FilePath $(Join-Path -Path $(Join-Path -Path $(Join-Path -Path $env:ProgramFiles -ChildPath "Powershell") -ChildPath "7") -ChildPath "pwsh.exe") -ArgumentList "-NoExit -File $SourcePath"
+        Start-Process -FilePath $(Join-Path -Path $(Join-Path -Path $(Join-Path -Path $env:ProgramFiles -ChildPath "Powershell") -ChildPath "7") -ChildPath "pwsh.exe") -ArgumentList " -File $SourcePath"
         throw "Relaunch in PowerShell 7"
+        $Global:Live = $false
         exit
     }
     elseif ($(Join-Path -Path $(Join-Path -Path $(Join-Path -Path ${env:ProgramFiles(x86)} -ChildPath "Powershell") -ChildPath "7") -ChildPath "pwsh.exe")){
-        Start-Process -FilePath $(Join-Path -Path $(Join-Path -Path $(Join-Path -Path ${env:ProgramFiles(x86)} -ChildPath "Powershell") -ChildPath "7") -ChildPath "pwsh.exe") -ArgumentList "-NoExit -File $SourcePath"
+        Start-Process -FilePath $(Join-Path -Path $(Join-Path -Path $(Join-Path -Path ${env:ProgramFiles(x86)} -ChildPath "Powershell") -ChildPath "7") -ChildPath "pwsh.exe") -ArgumentList " -File $SourcePath"
         throw "Relaunch in PowerShell 7"
+        $Global:Live = $false
         exit
     }
     else {
@@ -34,8 +37,9 @@ if ($host.Version.Major -lt 7){
             Throw "Install of PowerShell 7 has failed ..."
             exit
         }
-        Start-Process pwsh.exe -ArgumentList "-NoExit -File $SourcePath"
+        Start-Process pwsh.exe -ArgumentList " -File $SourcePath"
         throw "Relaunch in PowerShell 7"
+        $Global:Live = $false
         exit
     }
 }

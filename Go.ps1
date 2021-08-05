@@ -1,5 +1,7 @@
 # Init
 . $(Join-Path -Path $(Split-Path -Parent -Path $MyInvocation.MyCommand.Definition) -ChildPath "Init.ps1") -SourcePath $MyInvocation.MyCommand.Path
+if (!$Global:Live){exit}
+
 $ChocolateyPackages = foreach ($Package in $State.packages.Keys) { if ($State.packages.$Package.provider -eq "chocolatey") { $State.packages.$Package } }
 $MSIPackages = $State.packages.Keys | Where-Object { $State.packages.$_.provider -eq "msi" }
 
@@ -82,3 +84,4 @@ while (!$Cleaned) {
     }
 }
 Write-Host -ForegroundColor Black -BackgroundColor Green "Done !"
+Read-Host "Press a key to exit ..."
